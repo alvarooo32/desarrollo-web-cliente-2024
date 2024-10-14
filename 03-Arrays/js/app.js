@@ -42,7 +42,10 @@ function log(msj){
 }
 /* splice param 2: número de elementos a borrar (0 = ninguno, solo inserta) */
 const months = ['Jan','March','April','June'];
-months.splice(1,0,'Feb'); // 0 Inserta en la posición 1
+months.splice(1,0,'Feb');
+// 1: Indica el índice donde comenzará la modificación, en este caso el índice 1.
+// 0: Indica que no se eliminará ningún elemento.
+// 'Feb': Es el elemento que se va a agregar en la posición indicada.
 console.log(months);
 months.splice(1,1,'May'); // 1 Reemplaza en la posición 1
 console.log(months);

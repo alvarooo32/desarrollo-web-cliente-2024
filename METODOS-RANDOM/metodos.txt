@@ -1,0 +1,25 @@
+/** 
+------------METODOS PARA ARRAYS-------------------------------------
+-pop() : elimina el últino elemento de un array y lo devuelve.
+-shift() : elimina el primer elemento de un array y lo devuelve.
+-push() : agrega un elemento al array al final de la lista.
+-reverse() : invierte el orden de los elementos de un array.
+-unshift() : agrega uno o mas elementos al inicio del array, y devuelve la nueva longitud del array
+-sort() : ordena los elementos de un (array) localmente y devuelve el array ordenado (alfanumericamente).
+-splice() : cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos. 
+    param1: Indica el índice donde comenzará la modificación, en este caso el índice 1.
+    param2: Indica que no se eliminará ningún elemento.
+    param3: Es el elemento que se va a agregar en la posición indicada.
+-replace() : remplaza un valor a por un valor b
+-slice() : copio el array sin modificar el original
+-indexOf() : busca en una cadena de texto o en un array un elemento o una palabra específica y te dice en qué posición aparece por primera vez si no hay aparece -1
+*/
+
+/**
+------------METODOS CADENAS-----------------------
+-indexOf() : busca en una cadena de texto o en un array un elemento o una palabra específica y te dice en qué posición aparece por primera vez si no hay aparece -1
+-split() : Divide la cadena como le pidamos
+-toLowerCase() : convierte cadena en minuscula
+-toUpperCase() : convierte cadena en mayuscula
+-trim() : elimina los espacios en blanco al principio y al final de una cadena
+ */
