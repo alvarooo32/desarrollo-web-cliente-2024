@@ -1,38 +1,57 @@
-let tabla = document.getElementById("generatabla");
-
+let tabla = document.getElementById("generaTabla");
 tabla.addEventListener("click", creoTabla);
 
-function creoTabla(){
-    let tam = RecogerNum("Dime tamaño de la matriz");
+function creoTabla() {
+  let tam = RecogerNum("Introduce el tamaño de la tabla")
 
-    let seccionTabla = document.getElementById("seccionTabla");
+  let seccionTabla = document.getElementById("seccionTabla");
 
-    let nuevaTabla = documet.createElement("table");
-    let tablaBody = document.createElement("tbody");
+  let nuevaTabla = document.createElement("table");
+  let tablaBody = document.createElement("tbody");
 
-    nuevaTabla.style.width = "100%";
-    nuevaTabla.setAttribute("border",1);
+  nuevaTabla.style.width = "100%";
+  nuevaTabla.setAttribute("border", 1);
 
-    for(let i=0; i<tam; i++){
-        let fila = document.createElement("tr");
+  for (let i = 0; i < tam; i++) {
+    let fila = document.createElement("tr");
+    for (let j = 0; j < tam; j++) {
+      let celda = document.createElement("td");
+      let textoCelda = document.createTextNode(`Fila: ${i+1}, Columna: ${j+1}`);
 
-        for(let j=0; j<tam; j++){
-            let celda = document.createElement("td");
-            let textoCelda = document.createTextNode(`Fila : ${i+1}, Columna: ${j+1}`);
+      celda.appendChild(textoCelda);
 
-            celda.appendChild(textoCelda);
-
-            //Añadir un manejador de eventos para cambiar el color al hacer cick 
-            //en la celda oportuna
-            celda.onclick = function(){
-                cambiarColorCelda(this); //this para cambiar esta celda en concreto
-            };
-            fila.appendChild(celda);
-            //añado la celda que acabo de cear a la fila que estoy construyendo
-            
-        }
-        tablaBody.appendChild(fila);
+      // Añadir un manejador de eventos para cambiar el color al hacer click
+      // en la celda oportuna.
+      celda.onclick = function() {
+        // Con this le envio la variable que tenemos seleccionada, "celda" en este caso
+        cambiarColorCelda(this);
+      };
+      // Añado la celda que acabo de crear a la fila
+      fila.appendChild(celda);
     }
-    nuevaTabla.appendChild(tablaBody);
-    seccionTabla.appendChild(nuevaTabla);
+    // Añado la fila al tbody
+    tablaBody.appendChild(fila);
+  }
+  // Añado el tbody al table
+  nuevaTabla.appendChild(tablaBody);
+  // Añado el table al section
+  seccionTabla.appendChild(nuevaTabla);
+}
+
+function cambiarColorCelda(celda) {
+  celda.style.backgroundColor = celda.style.backgroundColor === "blue" ? "green" : "blue";
+}
+
+function RecogerNum(msj) {
+  let valido = false
+  let a
+  do {
+      a = prompt(msj)
+      if (isNaN(a) || a == "") {
+          alert("No valido")
+      } else {
+          valido = true
+      }
+  } while (valido == false)
+  return Number(a);
 }
