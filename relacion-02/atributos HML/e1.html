@@ -1,0 +1,36 @@
+<!--1.- Crea un enlace que vaya a google. Crea dos botones junto al enlace:
+ Al pulsar el primero, muestra la URL a dónde va el enlace y su texto.
+ Al pulsar el segundo, cambia la URL a otra diferente y su texto por “he cambiado”-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo con Enlace y Botones</title>
+</head>
+<body>
+
+    <!-- Enlace a Google -->
+    <a id="miEnlace" href="https://www.google.com" target="_blank">Ir a Google</a>
+
+    <!-- Botones -->
+    <button onclick="mostrarInfo()">Mostrar información del enlace</button>
+    <button onclick="cambiarEnlace()">Cambiar enlace y texto</button>
+
+    <script>
+        // Función para mostrar la URL y el texto del enlace
+        function mostrarInfo() {
+            let enlace = document.getElementById("miEnlace");
+            alert("URL: " + enlace.href + "\nTexto: " + enlace.textContent); //enlace.textContent -> consultar y modificar solo el texto de ese elemento
+        }
+
+        // Función para cambiar la URL y el texto del enlace
+        function cambiarEnlace() {
+            let enlace = document.getElementById("miEnlace");
+            enlace.href = "https://www.ejemplo.com";
+            enlace.textContent = "He cambiado";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!--3.- Crea un DIV con el número 0 en su interior. Bajo el DIV, coloca dos botones: uno
+para sumar y otro para restar.
+ Si se pulsa el botón para sumar, se incrementa en uno el número que hay en el
+DIV en ese momento.
+ Si se pulsa el botón restar, se decrementa en uno el número que hay en el DIV en
+ese momento.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador con Suma y Resta</title>
+
+</head>
+<body>
+
+    <!-- DIV con el número 0 inicial -->
+    <div id="contador">0</div>
+
+    <!-- Botones para sumar y restar -->
+    <button onclick="sumar()">Sumar</button>
+    <button onclick="restar()">Restar</button>
+
+    <script>
+        // Función para incrementar el valor en 1
+        function sumar() {
+            const contador = document.getElementById("contador"); /*selecciona aquel elemento cuyo atributo id coincide, en este caso 0*/
+            contador.textContent = parseInt(contador.textContent) + 1; //Lo paso a numero y luego ya hago la operacion necesaria
+        }
+
+        // Función para decrementar el valor en 1
+        function restar() {
+            const contador = document.getElementById("contador");
+            contador.textContent = parseInt(contador.textContent) - 1;
+        }
+    </script>
+
+</body>
+</html>
