@@ -1,4 +1,4 @@
-
+//EJERCICIOS 2 Y 4 PROFE
 function pedirNumPositivo(mensaje) {
     let n = parseInt(prompt(mensaje));
     do {
