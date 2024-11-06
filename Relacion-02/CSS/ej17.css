@@ -9,8 +9,9 @@ div, section{
     border: 1px solid black;
     margin-bottom: 2%;
     left: 0;
-    top:0;  
+    top:50px;
 }
+
 .segundo{
     width: 100px;
     height: 100px;
@@ -18,7 +19,7 @@ div, section{
     border: 1px solid black;
     margin-bottom: 2%;
     left: 0;
-    top:150px;
+    top:200px;
 }
 
 .tercero{
@@ -30,6 +31,7 @@ div, section{
     left: 0;
     top: 350px;
 }
+
 .cuarto{
     width: 100px;
     height: 100px;
