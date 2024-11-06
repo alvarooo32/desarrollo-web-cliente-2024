@@ -1,35 +1,39 @@
 console.log("Aplicación calculadora");
 
-//Añadimos el listener al boton sumar
+
 let botonSumar = document.getElementById("btn_sumar");
-botonSumar.addEventListener("click", sumar);
+//Añadimos el listener al boton sumar
+botonSumar.addEventListener("click", sumar); //cuando haga click en sumar se ejecutara la funcion sumar
 
 function sumar() {
-  let formu = document.getElementById("formulario");
-  console.log(formu);
+  let formu = document.getElementById("formulario"); // coge de la etiqueta form la id formulario
+  console.log(formu);// muestra el formulario
   
-  //Asignamos los valores del formulario
-  let opA = formu["opA"];
+  //Obtenemos los valores del formulario
+  let opA = formu["opA"]; //a treves de su name opA
   let opB = formu["opB"];
   console.log(opA);
   console.log(opB);
   console.log("Operando A:" + opA.value);
   console.log("Operando B:" + opB.value);
 
+  //Operacion
   let resultado = parseInt(opA.value) + Number(opB.value);
-  let elemento = document.getElementById("resultado");
+
+  //Control de errores
+  let elemento = document.getElementById("resultado");;
 
   //Si el resultado no es un numero, cambiamos el msj de resultado
   if (isNaN(resultado)) {
     elemento.innerHTML = "Datos introducidos NO númericos";
 
-    // Opción 1
-    // elemento.style.background = "red";
-    // elemento.style.color= "white";
+    // Opción 1 Cambiar estilos
+    //elemento.style.background = "red";
+    //elemento.style.color= "white";
 
     // Opción 2
     // Eliminamos la clase y añadimos clase de alerta
-    if (elemento.classList.contains("normal")) {
+    if (elemento.classList.contains("normal")) {/*No entiendo */
       elemento.classList.remove("normal");
     }
     elemento.classList.add("alerta");
@@ -48,7 +52,7 @@ function sumar() {
     elemento.classList.add("normal");
     // También tenemos replace(oldClass, newClass);
 
-    let estilo = window.getComputedStyle(elemento);
+    let estilo = window.getComputedStyle(elemento); //no entiendo
     console.log("El background actual es: " + estilo.getPropertyValue("background"));
   
   }
