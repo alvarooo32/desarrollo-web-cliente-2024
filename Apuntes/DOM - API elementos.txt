@@ -61,9 +61,9 @@ elemento.after(); Añade el nuevo elemento justo después.
 elemento.prepend(); Añade el nuevo elemento justo antes del primer hijo.
 elemento.append(); Añade el nuevo elemento justo después del último hijo
 elemento.replaceChildren(); eliminar todos los hijos y los cambia por el nuevo
-elemento.
 elemento.replaceWith(); se sustituye el elemento por el nuevo.
 elemento.remove(); elimina el propio elemento.
+
 // Ejemplo
 {/* <div id="caja" class="element shine dark-theme"></div>
 const caja = document.querySelector("#caja");
