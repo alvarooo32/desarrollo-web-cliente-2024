@@ -1,5 +1,26 @@
+//Acceso a atributos
+- getElementsByTagName: Selecciona todos los elementos con una etiqueta HTML específica.
+- getElementsByName: Selecciona todos los elementos con un atributo name específico.
+- getElementsByClassName: Selecciona todos los elementos con una clase CSS específica.
+- getElementById: Selecciona un único elemento con un id específico.
+- querySelector: Selecciona el primer elemento que coincida con un selector CSS.
+- querySelectorAll: Selecciona todos los elementos que coincidan con un selector CSS.
+
+----------------------------------------------------------------------------------------------------
+//Gestión de nodos DOM
+- setAtribute(nombre,valor) Crea un nodo de tipo atributo con elnombre y valor indicados.
+- createComment(texto) Crea un nodo tipo comentario con eltexto indicado.
+- createElement(nombre_etiqueta) Crea un elemento del tipo indicado en elparámetro nombre_etiqueta.
+- createTextNode(texto) Crea un nodo tipo texto con el valorindicado.
+- appendChild(nodo) Cuelga un nodo a otro (es decir, añade un hijo a un nodo).
+- parentNode: Devuelve una referencia al nodo padre.
+- removeChild(nodo) Descuelga el nodo indicado de su padre y lo elimina.
+- insertBefore(nuevo,existente) Inserta un nuevo nodo antes del nodo existente que se indica en losargumentos.
+- replaceChild(nuevo, viejo) Sustituye el nodo nuevo por el nodo viejo.
+
 // Contenidos del DOM
 elemento.nodeName; string
+
 // contenido solo texto
 elemento.textContent; devuelve string con el contenido del texto.
 elemento.innerText; String. (deprecado - Evitar)
