@@ -40,10 +40,10 @@ let numero2;
 botonGenerar.addEventListener("click", generarNumeros)
 
 function generarNumeros() {
-    generar = setInterval(() => {
-        numero1 = getRandomIntInclusive(0,50);
-        numero2 = getRandomIntInclusive(0,50);
-        div1.textContent = "";
+    generar = setInterval(() => { //Esta funcion anonima es para que se repita durante 1000 ms
+        numero1 = getRandomIntInclusive(1,50);
+        numero2 = getRandomIntInclusive(1,50);
+        div1.textContent = ""; //No haria falta
         div2.textContent = "";
         divResultado.textContent = "";
 
@@ -52,7 +52,7 @@ function generarNumeros() {
 
         botonGenerar.disabled = true;
         botonComparar.disabled = false;
-    }, 20);
+    }, 1000); //1000 ms = 1seg
 }
 
 botonComparar.addEventListener("click", function(){
