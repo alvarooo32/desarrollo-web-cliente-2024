@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" onsubmit="return false">
+        Numero de tarjeta:
+        <input type="text" id="nt1" size="5" maxlength="4" onkeyup="mouFocus(this, 'nt2', event)">
+        <input type="text" id="nt2" size="5" maxlength="4" onkeyup="mouFocus(this, 'nt3', event)">
+        <input type="text" id="nt3" size="5" maxlength="4" onkeyup="mouFocus(this, 'nt4', event)">
+        <input type="text" id="nt4" size="5" maxlength="4">
+    </form>
+    <script>
+        function mueveFocus(campo, siguiente, evt){
+            evt = (evt) ? evt : event;
+            var codCaracter = (evt.charCode) ? evt.CharCode : ((evt.kerCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+            if (codCaracter > 31 && camp.value.lenght == camp.maxLength){
+                campo.forma.elementos[siguiente].focus();
+            }
+        }
+    </script>
+</body>
+</html>
