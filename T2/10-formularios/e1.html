@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <p><b>Cambiar color con boton desde select</b></p>
+    <form action="">
+        <label>Color:</label>
+        <select name="seleccionColor" id="caja">
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="azul">Azul</option>
+        </select>
+
+        <input type="button" id="cambiar" value="Cambiar">
+    </form>
+    <br>
+
+    <div id="colorBox" style="border: solid black 1px; width: 200px; height: 100px;"></div>
+
+    <script>
+        const select = document.getElementById("caja");
+        const colorBox = document.getElementById("colorBox");
+        const cambiar = document.getElementById("cambiar");
+
+        cambiar.addEventListener("click", function() {
+            switch(select.value) {
+                case "rojo":
+                    colorBox.style.backgroundColor = "red";
+                    break;
+                case "verde":
+                    colorBox.style.backgroundColor = "green";
+                    break;
+                case "azul":
+                    colorBox.style.backgroundColor = "blue";
+                    break;
+                default:
+                    colorBox.style.backgroundColor = "white";
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

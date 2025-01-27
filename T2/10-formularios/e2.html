@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Imagen</title>
+</head>
+<body>
+    <h2>Selecciona una imagen (PNG o JPG)</h2>
+    <form id="formularioImagen">
+        <input type="file" id="inputArchivo" name="imagen" accept="image/png, image/jpeg" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="mensaje"></p>
+
+    <script>
+        const formulario = document.getElementById("formularioImagen");
+        const inputArchivo = document.getElementById("inputArchivo");
+        const mensaje = document.getElementById("mensaje");
+
+        formulario.addEventListener("submit", function(evento) {
+
+            const archivo = inputArchivo.files[0]; // Obtener el archivo seleccionado
+
+            if (archivo) {
+                const nombreArchivo = archivo.name;
+                const extensionArchivo = nombreArchivo.split('.').pop().toLowerCase(); // Obtener la extensión
+
+                // Verificar si la extensión es .png o .jpg
+                if (extensionArchivo === 'png' || extensionArchivo === 'jpg') {
+                    mensaje.textContent = `El archivo "${nombreArchivo}" es válido.`;
+                } else {
+                    mensaje.textContent = `El archivo "${nombreArchivo}" no es válido. Debe ser .png o .jpg.`;
+                }
+            }
+        });             
+    </script>
+</body>
+</html>
