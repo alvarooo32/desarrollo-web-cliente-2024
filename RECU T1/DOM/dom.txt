@@ -1,0 +1,12 @@
+NODOS:
+
+-Document: el nodo raiz, a partir del cual dervan todos
+-Element: nodos definidos por etiquetas html.
+-Attribute: los atributos de al etiquetas definen nodos (Informacion asociada al nodo de tipo element)
+-Comentarios y Otros: los comentarios y otros elementos como las declaraciones doctype en la cabecera de los documentos HTML generan nodos.
+
+Document || Métodos de seleccion de elementos:
+- getElementByID() - Selecciona un elemento por ID
+- getElementByTagName() - Selecciona todos los elementos que coincidan con el nombre de la etiqueta especificada
+- querySelector() - Devuelve el primer elemento que coincidan con el grupo especificado de selectores.
+- querySelectorAll() - Devuelve todos los elementos que coincidan con el grupo especificado de delectores
