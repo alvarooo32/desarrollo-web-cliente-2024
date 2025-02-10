@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+    .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" minlength="2" required>
+        <div class="error" id="error-nombre">Por favor, introduce un nombre válido (más de 2 caracteres).</div>
+
+        <br/>
+
+        <label for="primerApellido">Primer Apellido:</label>
+        <input type="text" id="primerApellido" name="primerApellido" minlength="2" required>
+        <div class="error" id="error-nombre">Por favor, introduce un apellido válido (mas de 2 caracteres).</div>
+
+
+        <br/>
+
+        <label for="segundoApellido">Segundo Apellido:</label>
+        <input type="text" id="segundoApellido" name="segundoApellido" minlength="2">
+        <div class="error" id="error-nombre">Por favor, introduce un segundo apellido válido (mas de 2 caracteres).</div>
+
+
+        <br/>
+
+        <label for="Pasaporte">Pasaporte:</label>
+        <input type="file" id="pasaporte" name="pasaporte">
+
+        <br/>
+
+        <label for="estadoCivil">Estado Civil:</label>        
+        <input type="radio" value="1">casado
+        <input type="radio" value="2">soltero
+        <input type="radio" value="3">viudo
+    
+        
+
+        <br/>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="email" name="email" pattern="/^[Aa-Zz][0,9]{3} [.]{1} [@]{1} [Aa-Zz]{5} [.]{1} [Aa-Zz]{3}$/">
+        <div class="error" id="error-email">Por favor, introduce un correo electrónico válido.</div>
+
+
+        <br/>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <br/>
+
+        <label for="Repecontrasena">Repetir Contraseña:</label>
+        <input type="password" id="repeContrasena" name="repeContrasena" onkeypress="verificarContraseña()" required>
+
+        <br>
+
+        <button type="submit" onclick="borrar()">Borrar datos</button>
+
+        <script>
+
+            function verificarContraseña() {
+                let contrasena = document.getElementById("contrasena").value;
+                let repeContrasena = document.getElementById("repeContrasena").value;
+                
+                if (contrasena === repeContrasena) {
+                    alert("la contraseña es correcta");
+                } else {
+                    alert("la contraseña es no coincide");
+                }
+            }
+
+            function borrar() {
+                const nombre = document.getElementById("nombre");
+                const apellido1 = document.getElementById("primerApellido");
+                const apellido2 = document.getElementById("segundoApellido");
+                const email = document.getElementById("email");
+
+
+                nombre.value = "";
+                apellido1.value = "";
+                apellido2.value = "";
+                email.value = "";
+
+            } 
+
+
+
+        </script>
+        
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <br/>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail">
+
+        <br/>
+
+        <label for="select1">elige una opcion</label>
+        <select name="apuntarse" id="apuntarse">
+            <option value="info">pedir informacion</option>
+            <option value="apuntarseCurso">apuntarse a un curso</option>
+            <option value="otro">otros...</option>
+        </select>
+
+        <br>
+
+        <div id="opcion1" hidden>
+            <label for="select2">Curso:</label>
+            <select name="curso" id="curso">
+                <option value="dam">DAM</option>
+                <option value="daw">DAW</option>
+                <option value="asir">ASIR</option>
+            </select>
+        </div>
+        
+
+        <br>
+        <div id="opcion2" hidden>
+            <label for="opcion">Otra opcion:</label>
+            <input type="opcion" id="opcion" name="opcion">
+        </div>
+
+        
+    </form>
+
+    <script>
+        let select = document.getElementById("apuntarse");
+        let div1 = document.getElementById("opcion1");
+        let div2 = document.getElementById("opcion2");
+
+        select.addEventListener("click", () =>  {
+            if (select.value == "apuntarseCurso") {
+                div1.removeAttribute("hidden");
+                div2.toggleAttribute("hidden", true);
+            } else if(select.value == "otro"){
+                div2.removeAttribute("hidden");
+                div1.toggleAttribute("hidden", true);
+
+            }
+            
+        });
+        
+    </script>
+    <script></script>
+</body>
+</html>
